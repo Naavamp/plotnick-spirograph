@@ -1,10 +1,12 @@
+package plotnick.spirograph;
 public class spirographModel
 {
-    private double largeRadius;
-    private double smallRadius;
-    private double penDistance;
-    private double numsteps;
-    private double anglePerstep;
+
+    private double largeRadius = 200 ;
+    private double smallRadius = 75;
+    private double penDistance = 55;
+    private double numsteps = 8000;
+    private double anglePerstep = 0.007;
     private double time;
 
     public spirographModel(double largeRadius, double smallRadius, double penDistance, double numSteps, double anglePerStep)
