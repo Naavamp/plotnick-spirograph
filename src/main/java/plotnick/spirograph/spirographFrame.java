@@ -2,6 +2,8 @@ package plotnick.spirograph;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -16,10 +18,10 @@ public class spirographFrame extends JFrame
         setLayout(new GridBagLayout());
 
 
-        final JLabel largeRadiusLabel = new JLabel("LRadius");
+        final JLabel largeRadiusLabel = new JLabel("Large Radius");
         JTextField largeRadiusField = new JTextField("200");
 
-        final JLabel smallRadiusLabel = new JLabel("SRadius");
+        final JLabel smallRadiusLabel = new JLabel("Small Radius");
         JTextField smallRadiusField = new JTextField("75");
 
         final JLabel penDistanceLabel = new JLabel("PenDistance");
@@ -46,40 +48,97 @@ public class spirographFrame extends JFrame
 
         spirographView spirographView = new spirographView();
 
-        spirographView.addMouseListener(new MouseListener()
+        button.addActionListener(new ActionListener()
         {
             @Override
-            public void mouseClicked(MouseEvent e)
+            public void actionPerformed(ActionEvent e)
             {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e)
-            {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e)
-            {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e)
-            {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e)
-            {
-
+                spirographController.updateSpirographModel(
+                        Double.parseDouble(largeRadiusField.getText()),
+                        Double.parseDouble(smallRadiusField.getText()),
+                        Double.parseDouble(penDistanceField.getText()),
+                        Double.parseDouble(numStepsField.getText()),
+                        Double.parseDouble(anglePerStepField.getText())
+                );
             }
         });
+        GridBagConstraints constraints;
 
-        add(spirographView);
+        constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        add((largeRadiusLabel), constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 1;
+        constraints.gridy = 0;
+        add((largeRadiusField), constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        add((smallRadiusLabel),constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        add((smallRadiusField), constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        add((penDistanceLabel),constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 1;
+        constraints.gridy = 2;
+        add((penDistanceField), constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        add((numStepsLabel),constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 1;
+        constraints.gridy = 3;
+        add((numStepsField), constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 4;
+        add((anglePerStepLabel),constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 1;
+        constraints.gridy = 4;
+        add((anglePerStepField), constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 5;
+        add((timeLabel),constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 1;
+        constraints.gridy = 5;
+        add((timeField), constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 0;
+        constraints.gridy = 6;
+        constraints.anchor = GridBagConstraints.NORTH;
+        add((button), constraints);
+
+        constraints = new GridBagConstraints();
+        constraints.gridx = 2;
+        constraints.gridy = 0;
+        constraints.gridheight = 7;
+        constraints.weightx = 1;
+        constraints.weighty = 1;
+        constraints.fill = GridBagConstraints.BOTH;
+        add(spirographView, constraints);
+
 
 
     }

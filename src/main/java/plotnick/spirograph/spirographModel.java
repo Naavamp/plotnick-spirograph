@@ -1,21 +1,22 @@
 package plotnick.spirograph;
+
 public class spirographModel
 {
 
-    private double largeRadius = 200 ;
-    private double smallRadius = 75;
-    private double penDistance = 55;
-    private double numsteps = 8000;
-    private double anglePerstep = 0.007;
-    private double time;
+    double largeRadius = 200;
+    double smallRadius = 75;
+    double penDistance = 55;
+    double numsteps = 8000;
+    double anglePerstep = 0.007;
+    double time;
 
     public spirographModel(double largeRadius, double smallRadius, double penDistance, double numSteps, double anglePerStep)
     {
-         this.largeRadius = largeRadius;
-         this.smallRadius = smallRadius;
-         this.penDistance = penDistance;
-         this.numsteps = numSteps;
-         this.anglePerstep = anglePerStep;
+        this.largeRadius = largeRadius;
+        this.smallRadius = smallRadius;
+        this.penDistance = penDistance;
+        this.numsteps = numSteps;
+        this.anglePerstep = anglePerStep;
     }
 
     double getLargeRadius()
@@ -45,10 +46,10 @@ public class spirographModel
 
     double getTime()
     {
-
-        for(int i = 0; i < numsteps; i++)
+        for (int i = 0; i < getNumsteps(); i++)
         {
-             time += (i * anglePerstep);
+             time = i * getAnglePerstep();
+
         }
         return time;
     }
