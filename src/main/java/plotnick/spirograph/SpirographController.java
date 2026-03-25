@@ -25,5 +25,13 @@ public class SpirographController
         this.time = time;
     }
 
+    public void updateModel() {
+        spirographModel.setLargeRadius(Double.parseDouble(largeRadius.getText()));
+        spirographModel.setSmallRadius(Double.parseDouble(smallRadius.getText()));
+        spirographModel.setPenDistance(Double.parseDouble(penDistance.getText()));
+        spirographModel.setNumSteps(Integer.parseInt(numsteps.getText()));
+        spirographModel.setAnglePerStep(Double.parseDouble(anglePerstep.getText()));
+    }
+
 
 }
