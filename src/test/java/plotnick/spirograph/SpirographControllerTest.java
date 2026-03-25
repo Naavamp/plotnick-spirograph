@@ -1,6 +1,6 @@
+package plotnick.spirograph;
+
 import org.junit.jupiter.api.Test;
-import plotnick.spirograph.SpirographController;
-import plotnick.spirograph.SpirographModel;
 
 import javax.swing.*;
 
@@ -9,7 +9,7 @@ import static org.mockito.Mockito.*;
 public class SpirographControllerTest
 {
     @Test
-    void updateSpirographModel()
+    void SpirographModel()
     {
         //given
         SpirographModel spirographModel = mock();
@@ -29,19 +29,18 @@ public class SpirographControllerTest
 
 
         //when
+        SpirographModel spirographModel1 = new SpirographModel(200, 75,55, 80000, 0.007 );
 
-        spirographController.updateSpirographModel(200,  75, 55, 8000, 0.007);
 
         //then
 
-        // then
-        verify(spirographModel).setLargeRadius(200);
-        verify(spirographModel).setSmallRadius(75);
-        verify(spirographModel).setPenDistance(55);
-        verify(spirographModel).setNumSteps(8000);
-        verify(spirographModel).setAnglePerStep(0.007);
 
-// UI field updates
+        verify(spirographModel1).setLargeRadius(200);
+        verify(spirographModel1).setSmallRadius(75);
+        verify(spirographModel1).setPenDistance(55);
+        verify(spirographModel1).setNumSteps(8000);
+        verify(spirographModel1).setAnglePerStep(0.007);
+
         verify(largeRadius).setText("200.0");
         verify(smallRadius).setText("75.0");
         verify(penDistance).setText("55.0");
