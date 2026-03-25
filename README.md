@@ -5,7 +5,7 @@ outer and a pen point
 
 ### Screenshots
 
-![Screenshot](Screenshots/ScreenshotSpirograph.png)
+![Screenshot](Screenshots/screenshotFinalSpirograph.png)
 
 #### Links
 

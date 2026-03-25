@@ -10,38 +10,38 @@ public class SpirographFrame extends JFrame
 
     public SpirographFrame()
     {
-        setSize(500, 500);
+        setSize(1000, 1000);
         setTitle("Spirograph Frame");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setLayout(new GridBagLayout());
 
-        JLabel largeRadiusLabel = new JLabel("Large Radius");
-        JTextField largeRadiusField = new JTextField("200");
+        final JLabel largeRadiusLabel = new JLabel("Large Radius");
+        final JTextField largeRadiusField = new JTextField("200");
 
-        JLabel smallRadiusLabel = new JLabel("Small Radius");
-        JTextField smallRadiusField = new JTextField("75");
+        final JLabel smallRadiusLabel = new JLabel("Small Radius");
+        final JTextField smallRadiusField = new JTextField("75");
 
-        JLabel penDistanceLabel = new JLabel("PenDistance");
-        JTextField penDistanceField = new JTextField("55");
+        final JLabel penDistanceLabel = new JLabel("PenDistance");
+        final JTextField penDistanceField = new JTextField("55");
 
-        JLabel numStepsLabel = new JLabel("Number of Steps");
-        JTextField numStepsField = new JTextField("8000");
+        final JLabel numStepsLabel = new JLabel("Number of Steps");
+        final JTextField numStepsField = new JTextField("8000");
 
-        JLabel anglePerStepLabel = new JLabel("Angle Per Step");
-        JTextField anglePerStepField = new JTextField("0.007");
+        final JLabel anglePerStepLabel = new JLabel("Angle Per Step");
+        final JTextField anglePerStepField = new JTextField("0.007");
 
-        JLabel timeLabel = new JLabel("Time");
-        JTextField timeField = new JTextField("");
+        final JLabel timeLabel = new JLabel("Time");
+        final JTextField timeField = new JTextField("");
 
         JButton button = new JButton("Draw");
 
-        SpirographModel spirographModel = new SpirographModel(220, 78, 555, 10000, 0.007);
+        SpirographModel model = new SpirographModel(200, 75, 55, 8000, 0.007);
 
-        SpirographView spirographView = new SpirographView(spirographModel);
+        SpirographView spirographView = new SpirographView(model);
 
-        SpirographController spirographController = new SpirographController(
-                spirographModel, largeRadiusField, smallRadiusField,
+        SpirographController controller = new SpirographController(
+                model, largeRadiusField, smallRadiusField,
                 penDistanceField, numStepsField, anglePerStepField, timeField);
 
 
@@ -50,7 +50,7 @@ public class SpirographFrame extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                spirographController.updateModel();
+                controller.updateModel();
                 spirographView.repaint();
 
             }

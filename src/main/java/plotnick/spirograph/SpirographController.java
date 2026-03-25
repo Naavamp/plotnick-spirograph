@@ -3,7 +3,7 @@ import javax.swing.*;
 
 public class SpirographController
 {
-    private SpirographModel spirographModel;
+    private SpirographModel model;
     private JTextField largeRadius;
     private JTextField smallRadius;
     private JTextField penDistance;
@@ -16,7 +16,7 @@ public class SpirographController
                                 JTextField penDistance, JTextField numsteps,
                                 JTextField anglePerstep, JTextField time)
     {
-        this.spirographModel = spirographModel;
+        this.model = spirographModel;
         this.largeRadius = largeRadius;
         this.smallRadius = smallRadius;
         this.penDistance = penDistance;
@@ -26,11 +26,11 @@ public class SpirographController
     }
 
     public void updateModel() {
-        spirographModel.setLargeRadius(Double.parseDouble(largeRadius.getText()));
-        spirographModel.setSmallRadius(Double.parseDouble(smallRadius.getText()));
-        spirographModel.setPenDistance(Double.parseDouble(penDistance.getText()));
-        spirographModel.setNumSteps(Integer.parseInt(numsteps.getText()));
-        spirographModel.setAnglePerStep(Double.parseDouble(anglePerstep.getText()));
+        model.setLargeRadius(Double.parseDouble(largeRadius.getText()));
+        model.setSmallRadius(Double.parseDouble(smallRadius.getText()));
+        model.setPenDistance(Double.parseDouble(penDistance.getText()));
+        model.setNumSteps(Integer.parseInt(numsteps.getText()));
+        model.setAnglePerStep(Double.parseDouble(anglePerstep.getText()));
     }
 
 
