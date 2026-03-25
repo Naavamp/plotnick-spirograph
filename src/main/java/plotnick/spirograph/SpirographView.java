@@ -27,11 +27,11 @@ public class SpirographView extends JComponent
         for (int i = 0; i < nmstps; i++)
         {
             double time = i * anglprstp;
-            double y = (lrgrds - smllrds) * Math.sin((time) - pndstnc *
-                         Math.sin(lrgrds - smllrds) * time / smllrds);
+            double y = (lrgrds - smllrds) * Math.sin((time) - pndstnc
+                    * Math.sin(lrgrds - smllrds) * time / smllrds);
 
-            double x = (lrgrds - smllrds) * Math.cos(time) + pndstnc *
-                         Math.cos((lrgrds - smllrds) * time / smllrds);
+            double x = (lrgrds - smllrds) * Math.cos(time) + pndstnc
+                    * Math.cos((lrgrds - smllrds) * time / smllrds);
 
             g.drawLine((int) xprev, (int) yprev, (int) x, (int) y);
             xprev = x;

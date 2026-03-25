@@ -7,7 +7,8 @@ import java.awt.event.ActionListener;
 
 public class SpirographFrame extends JFrame
 {
-    final SpirographView spirographView = new SpirographView();
+    SpirographView spirographView = new SpirographView();
+
     public SpirographFrame()
     {
         setSize(500, 500);
@@ -17,34 +18,34 @@ public class SpirographFrame extends JFrame
         setLayout(new GridBagLayout());
 
 
-        final JLabel largeRadiusLabel = new JLabel("Large Radius");
+        JLabel largeRadiusLabel = new JLabel("Large Radius");
         JTextField largeRadiusField = new JTextField("200");
 
-        final JLabel smallRadiusLabel = new JLabel("Small Radius");
+        JLabel smallRadiusLabel = new JLabel("Small Radius");
         JTextField smallRadiusField = new JTextField("75");
 
-        final JLabel penDistanceLabel = new JLabel("PenDistance");
+        JLabel penDistanceLabel = new JLabel("PenDistance");
         JTextField penDistanceField = new JTextField("55");
 
-        final JLabel numStepsLabel = new JLabel("Number of Steps");
+        JLabel numStepsLabel = new JLabel("Number of Steps");
         JTextField numStepsField = new JTextField("8000");
 
-        final JLabel anglePerStepLabel = new JLabel("Angle Per Step");
+        JLabel anglePerStepLabel = new JLabel("Angle Per Step");
         JTextField anglePerStepField = new JTextField("0.007");
 
-        final JLabel timeLabel = new JLabel("Time");
+        JLabel timeLabel = new JLabel("Time");
         JTextField timeField = new JTextField("");
 
 
-        final JButton button = new JButton("Draw");
+        JButton button = new JButton("Draw");
 
-        SpirographModel spirographModel = new SpirographModel(200,  75, 55, 8000, 0.007);
+        SpirographModel spirographModel = new SpirographModel(200, 75, 55, 8000, 0.007);
 
 
-        SpirographController spirographController = new SpirographController(spirographModel,
+        SpirographController spirographController = new SpirographController(
+                spirographModel,
                 largeRadiusField, smallRadiusField, penDistanceField,
                 numStepsField, anglePerStepField, timeField);
-
 
 
         button.addActionListener(new ActionListener()
@@ -92,7 +93,7 @@ public class SpirographFrame extends JFrame
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 3;
-        add(numStepsLabel,constraints);
+        add(numStepsLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
@@ -131,7 +132,6 @@ public class SpirographFrame extends JFrame
         constraints.weighty = 1;
         constraints.fill = GridBagConstraints.BOTH;
         add(spirographView, constraints);
-
 
 
     }
