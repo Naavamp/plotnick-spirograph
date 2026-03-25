@@ -18,7 +18,7 @@ public class SpirographView extends JComponent
     {
         super.paintComponent(g);
         g.setColor(Color.BLACK);
-        g.translate(getWidth()/2,getHeight()/2);
+        g.translate(getWidth() / 2,getHeight() / 2);
 
 
         double numSteps = spirographModel.getNumSteps();

@@ -1,4 +1,5 @@
 package plotnick.spirograph;
+
 import javax.swing.*;
 
 public class SpirographController
