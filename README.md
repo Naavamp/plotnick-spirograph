@@ -1,11 +1,14 @@
-### Project Name
+### Spirograph 
 
-Add a description
+Created an image of a spirograph based on a given radius inner and 
+outer and a pen point
 
 ### Screenshots
 
-Put screenshots here
+![Screenshot](Screenshots/screenshotFinalSpirograph.png)
 
 #### Links
 
-- [name](http://url)
+- [Mockito](https://site.mockito.org/)
+- [GridBagLayout](https://docs.oracle.com/javase/tutorial/uiswing/layout/gridbag.html)
+- [Junit](https://junit.org/)
