@@ -5,8 +5,7 @@ import java.awt.*;
 
 public class SpirographView extends JComponent
 {
-  SpirographModel spirographModel = new SpirographModel(200,  75, 55, 8000, 0.007);
-
+    SpirographModel spirographModel = new SpirographModel(200, 75, 55, 8000, 0.007);
 
 
     protected void paintComponent(Graphics g)
@@ -16,38 +15,30 @@ public class SpirographView extends JComponent
         g.translate(0, getHeight());
 
 
-
-
         double xprev = 0;
         double yprev = 0;
+        double nmstps = spirographModel.getNumsteps();
+        double anglprstp = spirographModel.getAnglePerstep();
+        double lrgrds = spirographModel.getLargeRadius();
+        double smllrds = spirographModel.getSmallRadius();
+        double pndstnc = spirographModel.getPenDistance();
 
-        for (int i = 0; i < spirographModel.getNumsteps(); i++)
+
+        for (int i = 0; i < nmstps; i++)
         {
-            double time = i * spirographModel.getAnglePerstep();
-            double y = (spirographModel.getLargeRadius() - spirographModel.getSmallRadius()) *
-                    Math.sin((time) - spirographModel.getPenDistance() *
-                            Math.sin(spirographModel.getLargeRadius() - spirographModel.getSmallRadius()) *
-                            time / spirographModel.getSmallRadius());
+            double time = i * anglprstp;
+            double y = (lrgrds - smllrds) * Math.sin((time) - pndstnc *
+                         Math.sin(lrgrds - smllrds) * time / smllrds);
 
-            double x = (spirographModel.getLargeRadius() - spirographModel.getSmallRadius()) *
-                    Math.cos(time) + spirographModel.getPenDistance() *
-                    Math.cos((spirographModel.getLargeRadius() - spirographModel.getSmallRadius()) *
-                           time / spirographModel.getSmallRadius());
+            double x = (lrgrds - smllrds) * Math.cos(time) + pndstnc *
+                         Math.cos((lrgrds - smllrds) * time / smllrds);
 
-            g.drawLine((int)xprev, (int)yprev, (int)x,(int) y);
+            g.drawLine((int) xprev, (int) yprev, (int) x, (int) y);
             xprev = x;
-            yprev =y;
-
-
-
+            yprev = y;
 
         }
 
-
-
-
-
     }
-
 
 }

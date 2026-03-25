@@ -52,13 +52,7 @@ public class SpirographFrame extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                spirographController.updateSpirographModel(
-                        Double.parseDouble(largeRadiusField.getText()),
-                        Double.parseDouble(smallRadiusField.getText()),
-                        Double.parseDouble(penDistanceField.getText()),
-                        Double.parseDouble(numStepsField.getText()),
-                        Double.parseDouble(anglePerStepField.getText())
-                );
+
             }
         });
         GridBagConstraints constraints;
@@ -66,27 +60,27 @@ public class SpirographFrame extends JFrame
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 0;
-        add((largeRadiusLabel), constraints);
+        add(largeRadiusLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 0;
-        add((largeRadiusField), constraints);
+        add(largeRadiusField, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 1;
-        add((smallRadiusLabel), constraints);
+        add(smallRadiusLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 1;
-        add((smallRadiusField), constraints);
+        add(smallRadiusField, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 2;
-        add((penDistanceLabel), constraints);
+        add(penDistanceLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
@@ -96,38 +90,38 @@ public class SpirographFrame extends JFrame
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 3;
-        add((numStepsLabel),constraints);
+        add(numStepsLabel,constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 3;
-        add((numStepsField), constraints);
+        add(numStepsField, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 4;
-        add((anglePerStepLabel), constraints);
+        add(anglePerStepLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 4;
-        add((anglePerStepField), constraints);
+        add(anglePerStepField, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 5;
-        add((timeLabel), constraints);
+        add(timeLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 5;
-        add((timeField), constraints);
+        add(timeField, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 6;
         constraints.anchor = GridBagConstraints.NORTH;
-        add((button), constraints);
+        add(button, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridheight = 7;

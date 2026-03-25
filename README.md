@@ -5,7 +5,7 @@ outer and a pen point
 
 ### Screenshots
 
-![Screenshot](Screenshots/Screenshot 2026-03-24 174447.png)
+![Screenshot](Screenshots/Screenshot.png)
 
 #### Links
 

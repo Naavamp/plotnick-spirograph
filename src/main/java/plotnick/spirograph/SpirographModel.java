@@ -2,12 +2,12 @@ package plotnick.spirograph;
 
 public class SpirographModel
 {
-    double largeRadius = 200;
-    double smallRadius = 75;
-    double penDistance = 55;
-    double numsteps = 8000;
-    double anglePerstep = 0.007;
-    double time;
+    private double largeRadius = 200;
+    private double smallRadius = 75;
+    private double penDistance = 55;
+    private double numsteps = 8000;
+    private double anglePerstep = 0.007;
+    private double time;
 
     public SpirographModel(double largeRadius, double smallRadius,
                            double penDistance, double numSteps,
@@ -70,15 +70,7 @@ public class SpirographModel
         this.anglePerstep = anglePerstep;
     }
 
-    double getTime()
-    {
-        for (int i = 0; i < getNumsteps(); i++)
-        {
-             time = i * getAnglePerstep();
 
-        }
-        return time;
-    }
 
 
 }

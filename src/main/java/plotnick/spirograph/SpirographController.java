@@ -25,15 +25,5 @@ public class SpirographController
         this.time = time;
     }
 
-    public void updateSpirographModel(double largeRadius, double smallRadius,
-                                      double penDistance, double numSteps,
-                                      double anglePerStep)
-    {
-        SpirographModel spirographModel1 = new SpirographModel(largeRadius, smallRadius,
-                                                                penDistance, numSteps,
-                                                                anglePerStep);
 
-
-
-    }
 }
