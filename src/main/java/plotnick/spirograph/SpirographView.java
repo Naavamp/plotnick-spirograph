@@ -3,15 +3,21 @@ package plotnick.spirograph;
 import javax.swing.*;
 import java.awt.*;
 
+
 public class SpirographView extends JComponent
 {
-    SpirographModel spirographModel = new SpirographModel(200, 75, 55, 8000, 0.007);
+    private SpirographModel spirographModel;
+
+    public SpirographView(SpirographModel model) {
+        spirographModel = model;
+    }
+
 
 
     protected void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        g.setColor(new Color(150, 200, 255));
+        g.setColor(new Color(0,0,0));
         g.translate(0, getHeight());
 
 

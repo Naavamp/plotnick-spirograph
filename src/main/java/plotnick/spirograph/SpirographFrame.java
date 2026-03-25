@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 
 public class SpirographFrame extends JFrame
 {
-    SpirographView spirographView = new SpirographView();
 
     public SpirographFrame()
     {
@@ -16,7 +15,6 @@ public class SpirographFrame extends JFrame
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         setLayout(new GridBagLayout());
-
 
         JLabel largeRadiusLabel = new JLabel("Large Radius");
         JTextField largeRadiusField = new JTextField("200");
@@ -36,16 +34,15 @@ public class SpirographFrame extends JFrame
         JLabel timeLabel = new JLabel("Time");
         JTextField timeField = new JTextField("");
 
-
         JButton button = new JButton("Draw");
 
-        SpirographModel spirographModel = new SpirographModel(200, 75, 55, 8000, 0.007);
+        SpirographModel spirographModel = new SpirographModel(220, 78, 555, 10000, 0.007);
 
+        SpirographView spirographView = new SpirographView(spirographModel);
 
         SpirographController spirographController = new SpirographController(
-                spirographModel,
-                largeRadiusField, smallRadiusField, penDistanceField,
-                numStepsField, anglePerStepField, timeField);
+                spirographModel, largeRadiusField, smallRadiusField,
+                penDistanceField, numStepsField, anglePerStepField, timeField);
 
 
         button.addActionListener(new ActionListener()
@@ -58,66 +55,80 @@ public class SpirographFrame extends JFrame
 
             }
         });
+
         GridBagConstraints constraints;
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 0;
+        constraints.ipadx = 10;
         add(largeRadiusLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 0;
+        constraints.ipadx = 10;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(largeRadiusField, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 1;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(smallRadiusLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 1;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(smallRadiusField, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 2;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(penDistanceLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 2;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add((penDistanceField), constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 3;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(numStepsLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 3;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(numStepsField, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 4;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(anglePerStepLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 4;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(anglePerStepField, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 5;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(timeLabel, constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 5;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
         add(timeField, constraints);
 
         constraints = new GridBagConstraints();
@@ -130,10 +141,10 @@ public class SpirographFrame extends JFrame
         constraints.gridheight = 7;
         constraints.weightx = 1;
         constraints.weighty = 1;
+        constraints.gridx = 2;
+        constraints.gridy = 0;
         constraints.fill = GridBagConstraints.BOTH;
         add(spirographView, constraints);
-
-
     }
 
     public static void main(String[] args)
@@ -141,6 +152,4 @@ public class SpirographFrame extends JFrame
         SpirographFrame frame = new SpirographFrame();
         frame.setVisible(true);
     }
-
-
 }
