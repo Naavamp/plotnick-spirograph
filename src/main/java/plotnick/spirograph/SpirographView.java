@@ -23,28 +23,26 @@ public class SpirographView extends JComponent
 
         double xprev = 0;
         double yprev = 0;
-        double nmstps = spirographModel.getNumsteps();
-        double anglprstp = spirographModel.getAnglePerstep();
-        double lrgrds = spirographModel.getLargeRadius();
-        double smllrds = spirographModel.getSmallRadius();
-        double pndstnc = spirographModel.getPenDistance();
+        double numSteps = spirographModel.getNumSteps();
+        double anglePerStep = spirographModel.getAnglePerStep();
+        double largeRadius = spirographModel.getLargeRadius();
+        double smallRadius = spirographModel.getSmallRadius();
+        double penDistance = spirographModel.getPenDistance();
 
 
-        for (int i = 0; i < nmstps; i++)
+        for (int i = 0; i < numSteps; i++)
         {
-            double time = i * anglprstp;
-            double y = (lrgrds - smllrds) * Math.sin((time) - pndstnc
-                    * Math.sin(lrgrds - smllrds) * time / smllrds);
+            double time = i * anglePerStep;
+            double y = (largeRadius - smallRadius) * Math.sin((time) - penDistance
+                    * Math.sin(largeRadius - smallRadius) * time / smallRadius);
 
-            double x = (lrgrds - smllrds) * Math.cos(time) + pndstnc
-                    * Math.cos((lrgrds - smllrds) * time / smllrds);
+            double x = (largeRadius - smallRadius) * Math.cos(time) + penDistance
+                    * Math.cos((largeRadius - smallRadius) * time / smallRadius);
 
             g.drawLine((int) xprev, (int) yprev, (int) x, (int) y);
             xprev = x;
             yprev = y;
 
         }
-
     }
-
 }

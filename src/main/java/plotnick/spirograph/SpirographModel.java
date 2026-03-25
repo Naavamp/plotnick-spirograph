@@ -5,8 +5,8 @@ public class SpirographModel
     private double largeRadius = 200;
     private double smallRadius = 75;
     private double penDistance = 55;
-    private double numsteps = 8000;
-    private double anglePerstep = 0.007;
+    private double numSteps = 8000;
+    private double anglePerStep = 0.007;
     private double time;
 
     public SpirographModel(double largeRadius, double smallRadius,
@@ -16,8 +16,8 @@ public class SpirographModel
         this.largeRadius = largeRadius;
         this.smallRadius = smallRadius;
         this.penDistance = penDistance;
-        this.numsteps = numSteps;
-        this.anglePerstep = anglePerStep;
+        this.numSteps = numSteps;
+        this.anglePerStep = anglePerStep;
     }
 
     double getLargeRadius()
@@ -35,14 +35,14 @@ public class SpirographModel
         return penDistance;
     }
 
-    double getNumsteps()
+    double getNumSteps()
     {
-        return numsteps;
+        return numSteps;
     }
 
-    double getAnglePerstep()
+    double getAnglePerStep()
     {
-        return anglePerstep;
+        return anglePerStep;
     }
 
     public void setLargeRadius(double largeRadius)
@@ -62,12 +62,12 @@ public class SpirographModel
 
     public void setNumSteps(double numsteps)
     {
-        this.numsteps = numsteps;
+        this.numSteps = numsteps;
     }
 
     public void setAnglePerStep(double anglePerstep)
     {
-        this.anglePerstep = anglePerstep;
+        this.anglePerStep = anglePerstep;
     }
 
 
